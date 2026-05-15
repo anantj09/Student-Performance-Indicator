@@ -40,7 +40,7 @@ class DataTransformation:
             cat_pipeline = Pipeline(      #this pipeline will handle all the categorical columns
                 steps=[
                     ("imputer",SimpleImputer(strategy="most_frequent")), #to handle missing values
-                    ("one_hot_encoder",OneHotEncoder()),     #to convert the categoirical into num
+                    ("one_hot_encoder",OneHotEncoder(handle_unknown='ignore')),     #to convert the categoirical into num
                     ("scaler",StandardScaler(with_mean=False))            #to scale all the values
                 ]
             )
