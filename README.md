@@ -22,7 +22,7 @@ Student academic performance is influenced by a range of socioeconomic and demog
 
 ## Live Demo
 
-> Deployed on Hugging Face Spaces — [link here once deployed]
+> Deployed on Hugging Face Spaces — [[HFSpace Link]](https://huggingface.co/spaces/anantj09/Student-Performance-Predictor)
 
 ---
 
