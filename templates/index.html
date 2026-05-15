@@ -1,3 +1,109 @@
-<h1>
-    "Welcome to the home page"
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PredictED Pipeline — Student Score Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- ── Grid overlay ── -->
+    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- ── Orb glows ── -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <!-- ── Nav ── -->
+    <nav class="nav">
+        <span class="nav-logo">PredictSP<span class="accent">.</span></span>
+        <a href="/predictdata" class="btn-pill">Launch Predictor →</a>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <main class="hero">
+        <div class="hero-eyebrow">
+        <span class="tag">Machine Learning · Flask · HuggingFace</span>
+        </div>
+
+        <h1 class="hero-title">
+        Predict student<br />
+        <span class="highlight">Maths performance</span><br />
+        before the exam.
+        </h1>
+
+        <p class="hero-sub">
+        Enter demographic &amp; academic background features.
+        The trained regression model returns a predicted score
+        in under 200 ms.
+        </p>
+
+        <div class="hero-cta">
+        <a href="/predictdata" class="btn-primary">Try the predictor</a>
+        <a href="#how" class="btn-ghost">How it works ↓</a>
+        </div>
+
+        <!-- ── Score pill mockup ── -->
+        <!-- <div class="score-card" aria-label="Model performance">
+        <div class="sc-meta">
+            Trained Regression Model · R² Score: 0.88
+        </div> -->
+    </main>
+
+    <!-- ── How it works ── -->
+    <section class="how" id="how">
+        <h2 class="section-title">Pipeline overview</h2>
+        <div class="steps">
+        <div class="step">
+            <div class="step-num">01</div>
+            <h3>Input features</h3>
+            <p>Gender, race/ethnicity, parental education, lunch type, test prep course, reading &amp; writing scores.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">02</div>
+            <h3>Preprocessing</h3>
+            <p>One-hot encoding for categoricals, standard scaling for numerics — all baked into <code>preprocessor.pkl</code>.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">03</div>
+            <h3>Model inference</h3>
+            <p>Gradient-boosted regressor loaded from <code>model.pkl</code> produces a continuous math score.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">04</div>
+            <h3>Result</h3>
+            <p>Score returned instantly via Flask route and rendered on the results page.</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <span>PredictSP</span>
+        <span class="footer-sep">·</span>
+        <span>Built with Flask &amp; scikit-learn</span>
+        <span class="footer-sep">·</span>
+        <a href="/predictdata" class="footer-link">Open app →</a>
+    </footer>
+
+    <script>
+        // Animate the score counter on load
+        const target = 74;
+        let current = 0;
+        const scoreEl = document.getElementById('animScore');
+        const barEl   = document.getElementById('animBar');
+        const duration = 1400;
+        const step = duration / target;
+        const timer = setInterval(() => {
+        current++;
+        scoreEl.textContent = current;
+        barEl.style.width = (current / 100 * 100) + '%';
+        if (current >= target) clearInterval(timer);
+        }, step);
+    </script>
+
+</body>
+</html>

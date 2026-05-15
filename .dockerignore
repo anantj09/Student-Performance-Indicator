@@ -1,0 +1,74 @@
+catboost_info/
+data/
+
+
+# Git
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+sec48_venv/
+.pixi/
+
+# Jupyter / notebook artifacts
+notebook/
+*.ipynb
+.ipynb_checkpoints/
+
+# Test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Env files (secrets)
+.env
+.envrc
+
+# IDE / editor
+.vscode/
+.idea/
+.cursorignore
+.cursorindexingignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+pip-log.txt
+
+# This file
+.dockerignore
